@@ -146,19 +146,3 @@ const galleryItems = [
       lightBoxImage.src = "";
     }
     });
-
-
-
-
-    
-    //   window.KeyboardEvent('keydown', (e) => {
-    //     if  (e.keyCode === 39)  {
-          
-    //     }
-    //   if (e.keyCode ===  37)  {
-       
-    //     }  
-    // });
-    
-
-    
