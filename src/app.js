@@ -86,11 +86,15 @@ const galleryItems = [
     return galleryItem;
   }
 
+  
+
   const elements = galleryItems.map(makeGalleryEl);
 
   const galleryItemsContainer = document.querySelector('.js-gallery');
 
   galleryItemsContainer.append(...elements);
+
+  console.log(galleryItems);
 
   // делегирование, открытие модального окна, подмена значения src
 
@@ -115,16 +119,46 @@ const galleryItems = [
   
   closeBtn.addEventListener('click', modalClose);
 
-  function modalClose() {
+  function modalClose() {    
     modal.classList.remove('is-open');
     lightBoxImage.src = "";
   }
 
 
-  
-  
-  
 
-  
+  // доп. закрытие по клику на overlay
+
+  const overlay = document.querySelector('.lightbox__overlay');
+
+  overlay.addEventListener('click', onOverlayClick);
+
+  function  onOverlayClick(e) {    
+    if(e.currentTarget === e.target) {
+      modal.classList.remove('is-open');
+      lightBoxImage.src = "";      
+    }
+  }
+ 
+  //  доп. закрытие по Esc
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      modal.classList.remove('is-open');
+      lightBoxImage.src = "";
+    }
+    });
 
 
+
+
+    
+    //   window.KeyboardEvent('keydown', (e) => {
+    //     if  (e.keyCode === 39)  {
+          
+    //     }
+    //   if (e.keyCode ===  37)  {
+       
+    //     }  
+    // });
+    
+
+    
